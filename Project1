@@ -1,0 +1,14 @@
+def linear_search(roll, target):
+      for i in range(len(roll)):
+          if roll[i] == target:
+              return i
+      return -1
+  
+roll= [101,102,103,104,105]
+target = 104
+result = linear_search(roll, target)
+  
+if result != -1:
+      print(f"Element found at index {result}")
+else:
+      print("Element not found")
