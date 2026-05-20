@@ -1,0 +1,29 @@
+def binary_search_marks(marks, target):
+    left = 0
+    right = len(marks) - 1
+    steps = 0
+
+    while left <= right:
+        steps += 1
+        mid = (left + right) // 2
+
+        if marks[mid] == target:
+            return mid, steps
+        elif marks[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return -1, steps
+
+# Main Program
+marks = [35, 42, 50, 61, 78, 85, 90]
+target = 78
+
+index, steps = binary_search_marks(marks, target)
+
+if index != -1:
+    print("Marks found at index", index)
+    print("Steps taken:", steps)
+else:
+    print("Marks not found")
